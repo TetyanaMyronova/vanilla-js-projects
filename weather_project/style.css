@@ -1,0 +1,71 @@
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-image: url("background.jpg")
+
+}
+
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Platino', cursive;
+    font-size: 3rem;
+    color: white;
+}
+
+.city-form {
+    display: grid;
+    margin: auto;
+    padding: 2rem;
+}
+
+.city-input {
+    margin-bottom: 4rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'SansSerif', coursive;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+
+.get-weather-button {
+    background-color: rgb(12, 172, 178);
+    color: white;
+    margin-bottom: 4rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'SansSerif', coursive;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+
+.box {
+    height: 30px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.city-weather, .weather-output {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'SansSerif', coursive;
+    width: 100%;
+    height: 100%;
+
+}
