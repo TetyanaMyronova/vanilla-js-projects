@@ -1,0 +1,64 @@
+html, body{
+    box-sizing: border-box;
+    background-image: url("lightBackground.jpg");
+    height: 100%;
+    font-family: "Yuppy SC";
+}
+
+#app h1 {
+    display:flex;
+    justify-content: center;
+    font-size: 4em;
+    padding-top: 5%;
+    color:rgba(53, 84, 175, 0.98);
+}
+
+.main-app {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.main-app form {
+    margin-bottom:5%;
+}
+
+.search-form {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.searchTerm {
+    color:rgba(25, 93, 173, 0.62);
+    text-align: center;
+    width:15em;
+    height:3em;
+    font-size: 2em;
+    border: 2px solid rgba(53, 84, 175, 0.98);
+    font-family: Papyrus;
+    border-radius: 8px;
+}
+
+.get-results-button {
+    color:rgba(25, 93, 173, 0.62);
+    border: 2px solid rgba(53, 84, 175, 0.98);
+    background-color: white;
+    font-size: 2em;
+    font-family: Papyrus;
+    border-radius: 8px;
+}
+
+.get-results-button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.results {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.results img{
+    border:2px solid white;
+}

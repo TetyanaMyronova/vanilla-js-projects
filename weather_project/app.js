@@ -33,22 +33,46 @@
     var cityForm = app.querySelector('.city-form');
     var cityInput = cityForm.querySelector('.city-input');
     var cityWeather = app.querySelector('.city-weather');
+    var cloudImg = cityWeather.querySelector('.img')
+    cityInput.focus();
+
+    function ucFirstAllWords(str) {
+        var pieces = str.split(" ");
+        for (var i = 0; i < pieces.length; i++) {
+            var j = pieces[i].charAt(0).toUpperCase();
+            pieces[i] = j + pieces[i].substr(1);
+        }
+        return pieces.join(" ");
+    }
 
     cityForm.addEventListener('submit', function (event) { // this line changes
         event.preventDefault(); // prevent the form from submitting
 
         // This code doesn't change!
-        var city = cityInput.value;
+        var city = ucFirstAllWords(cityInput.value);
 
-        //setting default value
-        cityWeather.innerText='Loading...';
+        cityInput.value = '';
+
+        //setting default value during loading
+        cityWeather.innerText = `Loading...`;
 
         getCoordinatesForCity(city)
             .then(getCurrentWeather)
             .then(function (weather) {
-                cityWeather.innerText = 'Current temperature: ' + weather.temperature + ' C'+
-                    '\n Cloud condition:  '+ weather.icon +
-                    '\n Wind speed:  '+ weather.windSpeed;
-            });
+                cityWeather.innerText =
+                    `Current temperature for ${city}: ${weather.temperature} C
+                     Cloud condition:  ${weather.icon}
+                     Wind speed:  ${weather.windSpeed} km/h` ;
+            })
+            .catch(() => {
+                if (!navigator.onLine) {
+                    cityWeather.innerText = `Check your internet connection 
+                                             You seem to be offline`;
+                }
+                else {
+                    cityWeather.innerText = `Ooops... something went wrong  
+                                             Please try again later`;
+                }
+            })
     })
 })();
